@@ -2,6 +2,7 @@ import argparse
 from commands.user_info import *
 from commands.user_rating import *
 from commands.contest_list import *
+from commands.problems import *
 import requests
 proxies = {"http": "http://edcguest:edcguest@172.31.102.29:3128",
            "https": "http://edcguest:edcguest@172.31.102.29:3128"}
@@ -19,6 +20,9 @@ def get_parser():
     parser.add_argument('-g','--graph', help="Provides rating chart of user");
     parser.add_argument('-c','--contest',type=int,help="id of contest to display");
     parser.add_argument('--gym', action='store_true', help="Optional argument to list gym contests");
+    parser.add_argument('-p','--problem', help="Tag of the problems to retrieve");
+    
+    
     # return parser
     return parser
 
@@ -32,6 +36,7 @@ def main():
     graph = args.graph
     contest = args.contest
     gym = args.gym
+    problem = args.problem
 
     if user:
         res = get_req("http://codeforces.com/api/user.info?handles={0}".format(user))
@@ -45,5 +50,8 @@ def main():
         else:
             res = get_req("http://codeforces.com/api/contest.list");
         contest_list(json.loads(res.text), contest)
+    elif problem:
+        res =  get_req("https://codeforces.com/api/problemset.problems?tags={}".format(problem))
+        p_main(json.loads(res.text))
 
 main()

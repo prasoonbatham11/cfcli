@@ -50,4 +50,20 @@ class User:
         self.avatar = user.get("avatar")
         self.titlePhoto = user.get("titlePhoto")
     
+class Problem:
+    def __init__(self, problem):
+        self.contestId = problem.get("contestId")
+        self.problemsetName = problem.get("problemsetName")
+        self.index = problem.get("index")
+        self.name = problem.get("name")
+        self.type = problem.get("type")
+        self.points = problem.get("points")
+        self.rating = problem.get("rating")
+        self.tags = problem.get("tags")
+
+class ProblemStatistics:
+    def __init__(self, ps):
+        self.contestId = ps.get("contestId")
+        self.index = ps.get("index")
+        self.solvedCount = ps.get("solvedCount")
         

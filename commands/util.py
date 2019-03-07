@@ -3,6 +3,15 @@ import numpy as np
 import subprocess
 from colorama import Fore, Back, Style
 
+def print_c(val, color='green', end='\n'):
+    if color is 'green':
+        c = Fore.GREEN
+    elif color is 'cyan':
+        c = Fore.CYAN
+    elif color is 'red':
+        c = Fore.RED
+    print(c+val+Style.RESET_ALL, end=end)
+
 def print_color(key, attr, color='cyan'):
     attr = str(attr)
     if color is 'cyan':

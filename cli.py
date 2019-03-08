@@ -20,8 +20,8 @@ def get_parser():
     parser.add_argument('-g','--graph', help="Provides rating chart of user");
     parser.add_argument('-c','--contest',type=int,help="id of contest to display");
     parser.add_argument('--gym', action='store_true', help="Optional argument to list gym contests");
-    parser.add_argument('-p','--problem', help="Tag of the problems to retrieve");
-    
+    parser.add_argument('-p','--problem', action='store_true', help="Retrieve all problems");
+    parser.add_argument('--tag', help="Tag of problems to retrieve");
     
     # return parser
     return parser
@@ -37,7 +37,8 @@ def main():
     contest = args.contest
     gym = args.gym
     problem = args.problem
-
+    tag = args.tag
+    
     if user:
         res = get_req("http://codeforces.com/api/user.info?handles={0}".format(user))
         user_info(json.loads(res.text))
@@ -51,7 +52,10 @@ def main():
             res = get_req("http://codeforces.com/api/contest.list");
         contest_list(json.loads(res.text), contest)
     elif problem:
-        res =  get_req("https://codeforces.com/api/problemset.problems?tags={}".format(problem))
+        if tag:
+            res = get_req("https://codeforces.com/api/problemset.problems?tags={}".format(tag))
+        else:
+            res = get_req("https://codeforces.com/api/problemset.problems")
         p_main(json.loads(res.text))
 
 main()

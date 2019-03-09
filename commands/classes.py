@@ -80,3 +80,15 @@ class BlogEntry:
         self.allowViewHistory = b.get("allowViewHistory")
         self.tags = b.get("tags")
         self.rating = b.get("rating")
+
+class Comment:
+    def __init__(self, c):
+        self.id = c.get("id")
+        self.creationTimeSeconds = c.get("creationTimeSeconds")
+        self.commentatorHandle = c.get("commentatorHandle")
+        self.locale = c.get("locale")
+        self.text = c.get("text")
+        self.parentCommentId = c.get("parentCommentId")
+        self.rating = c.get("rating")
+        if not self.parentCommentId:
+            self.parentCommentId = 0

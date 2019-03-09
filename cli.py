@@ -59,6 +59,7 @@ def main():
         p_main(json.loads(res.text))
     elif blogid:
         res = get_req("https://codeforces.com/api/blogEntry.view?blogEntryId={}".format(blogid))
-        blog(json.loads(res.text))
+        comm = get_req("https://codeforces.com/api/blogEntry.comments?blogEntryId={}".format(blogid))
+        blog(json.loads(res.text), json.loads(comm.text))
 
 main()

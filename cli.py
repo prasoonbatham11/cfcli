@@ -3,6 +3,7 @@ from commands.user_info import *
 from commands.user_rating import *
 from commands.contest_list import *
 from commands.problems import *
+from commands.blog import *
 import requests
 import json
 
@@ -19,6 +20,7 @@ def get_parser():
     parser.add_argument('--gym', action='store_true', help="Optional argument to list gym contests");
     parser.add_argument('-p','--problem', action='store_true', help="Retrieve all problems");
     parser.add_argument('--tag', help="Tag of problems to retrieve");
+    parser.add_argument('-b','--blog',help="View the blog entry specified by id")
     
     # return parser
     return parser
@@ -35,6 +37,7 @@ def main():
     gym = args.gym
     problem = args.problem
     tag = args.tag
+    blogid = args.blog
     
     if user:
         res = get_req("http://codeforces.com/api/user.info?handles={0}".format(user))
@@ -54,5 +57,8 @@ def main():
         else:
             res = get_req("https://codeforces.com/api/problemset.problems")
         p_main(json.loads(res.text))
+    elif blogid:
+        res = get_req("https://codeforces.com/api/blogEntry.view?blogEntryId={}".format(blogid))
+        blog(json.loads(res.text))
 
 main()

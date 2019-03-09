@@ -2,6 +2,11 @@ from datetime import datetime
 import numpy as np
 import subprocess
 from colorama import Fore, Back, Style
+import html2text as ht
+import mdv
+
+def get_mark(html):
+    return mdv.main(ht.html2text(html))
 
 def get_colored(val, color='white'):
     c = ""
@@ -93,6 +98,29 @@ def seconds_to_hrs(time):
             ans += str(sec)+" seconds "
         return ans
 
+def seconds_to_ago(time):
+    days = time//86400
+    year = days//365
+    days = days%365
+    time = time%86400
+    hrs = time//3600
+    time = time%3600
+    min = time//60
+    time = time%60
+    sec = time
+    ans = ""
+    if year>0:
+        ans+=str(year)+" year(s) "
+    if days>0:
+        ans += str(days)+" days "
+    elif hrs>0:
+        ans += str(hrs)+" hours "
+    elif min>0:
+        ans += str(min)+" minutes "
+    elif sec>0:
+        ans += str(sec)+" seconds "
+    return ans
+    
 def format_date(time):
     a = datetime.fromtimestamp(time).strftime("%B %d, %Y %H:%M:%S")
     return a

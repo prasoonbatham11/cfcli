@@ -66,4 +66,17 @@ class ProblemStatistics:
         self.contestId = ps.get("contestId")
         self.index = ps.get("index")
         self.solvedCount = ps.get("solvedCount")
-        
+
+class BlogEntry:
+    def __init__(self, b):
+        self.id = b.get("id")
+        self.originalLocale = b.get("originalLocale")
+        self.creationTimeSeconds = b.get("creationTimeSeconds")
+        self.authorHandle = b.get("authorHandle")
+        self.title = b.get("title")
+        self.content = b.get("content")
+        self.locale = b.get("locale")
+        self.modificationTimeSeconds = b.get("modificationTimeSeconds")
+        self.allowViewHistory = b.get("allowViewHistory")
+        self.tags = b.get("tags")
+        self.rating = b.get("rating")

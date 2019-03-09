@@ -4,13 +4,10 @@ from commands.user_rating import *
 from commands.contest_list import *
 from commands.problems import *
 import requests
-proxies = {"http": "http://edcguest:edcguest@172.31.102.29:3128",
-           "https": "http://edcguest:edcguest@172.31.102.29:3128"}
-
 import json
 
 def get_req(url):
-    return requests.get(url, proxies=proxies)
+    return requests.get(url)
 
 def get_parser():
     parser = argparse.ArgumentParser(description="Codeforces CLI")

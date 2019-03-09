@@ -1,6 +1,10 @@
 from .util import *
 from .classes import *
 from cmd import Cmd
+import urllib
+from bs4 import BeautifulSoup
+import textwrap
+import pydoc
     
 problems = []
 probStat = []
@@ -23,7 +27,65 @@ def det_prob(i):
         print_color("Rating", p.rating)
     print_color("Solved By", ps.solvedCount)
 
+def prob_stat(i):
+    p = problems[i]
+    url = "http://codeforces.com/problemset/problem/"+str(p.contestId)+"/"+str(p.index)
+    page = urllib.request.urlopen(url)
+    soup = BeautifulSoup(page, 'html.parser')
+    pstate = soup.find('div', attrs={'class':'problem-statement'})
+    header = pstate('div', attrs={'class':'header'})
+    title = header[0]('div', attrs={'class':'title'})[0].get_text()
+    time_limit = header[0]('div', attrs={'class':'time-limit'})[0].get_text()[19:]
+    mem_limit = header[0]('div', attrs={'class':'memory-limit'})[0].get_text()[21:]
 
+    statement = pstate('div')[10]('p')
+    state = []
+    for s in statement:
+        state.append(s.get_text().replace('$$$', ''))
+
+    input_spec = pstate('div', {'class':'input-specification'})[0]('p')
+    input_s = []
+    for s in input_spec:
+        input_s.append(s.get_text().replace('$$$', ''))
+    output_spec = pstate('div', {'class':'output-specification'})[0]('p')
+    output_s = []
+    for s in output_spec:
+        output_s.append(s.get_text().replace('$$$', ''))
+
+    sample_test = pstate('div', {'class':'sample-test'})[0]
+    sample_test_i = sample_test('div', {'class':'input'})
+    sample_test_o = sample_test('div', {'class':'output'})
+    sti = []
+    sto = []
+    for s in sample_test_i:
+        sti.append(s.get_text().replace('Input',''))
+    for s in sample_test_o:
+        sto.append(s.get_text().replace('Output',''))
+
+    paged = get_colored("\t|"+title, "blue")+"\n"
+    paged += get_colored("\t|Time: ",'blue')+get_colored(time_limit, color='magenta')+"\n"
+    paged += get_colored("\t|Memory: ",'blue')+get_colored(mem_limit, color='magenta')+"\n\n\n"
+
+    paged += get_colored("\t|Problem Statement:\n", 'blue')+"\n"
+    for s in state:
+        paged += get_colored("\t|"+"\n\t|".join(textwrap.wrap(s, 150))+"\n")+"\n"
+
+    paged += get_colored("\t|Input:\n", 'blue')+"\n"
+    for s in input_s:
+        paged += get_colored("\t|"+"\n\t|".join(textwrap.wrap(s, 150))+"\n")+"\n"
+
+    paged += get_colored("\t|Output:\n", 'blue')+"\n"
+    for s in output_s:
+        paged += get_colored("\t|"+"\n\t|".join(textwrap.wrap(s, 150))+"\n")+"\n"
+
+    for i in range(len(sti)):
+        paged += get_colored("\t|Sample Input "+str(i)+":", 'blue')+"\n"
+        paged += get_colored("\t "+sti[i].replace('\n', '\n\t '), 'cyan')+"\n"
+        paged += get_colored("\t|Sample Output "+str(i)+":", 'blue')+"\n"
+        paged += get_colored("\t "+sto[i].replace('\n', '\n\t '), 'green')+"\n"
+    
+    pydoc.pager(paged)
+    
 class Prompt(Cmd):
     idx = 0
     jdx = 0
@@ -86,7 +148,16 @@ class Prompt(Cmd):
             i = i+1
     def help_listc(self):
         print_c("\nLists problems specified by contestId\n", 'red')
-        
+
+    def do_stat(self, idx):
+        l = len(problems)
+        for i in range(l):
+            if idx==str(problems[i].contestId)+str(problems[i].index):
+                prob_stat(i)
+                break
+    def help_stat(self):
+        print_c("\nLists the problem statement specified by contestId+index eg. 1133A\n", 'red')
+
     def do_exit(self, inp):
         return True
     def help_exit(self):
@@ -106,7 +177,7 @@ def p_main(res):
     for i in range(l):
         problems.append(Problem(res['result']['problems'][i]))
         probStat.append(ProblemStatistics(res['result']['problemStatistics'][i]))
-
+        
     Prompt().cmdloop()
 
     

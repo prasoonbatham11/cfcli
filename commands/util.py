@@ -3,27 +3,58 @@ import numpy as np
 import subprocess
 from colorama import Fore, Back, Style
 
-def print_c(val, color='green', end='\n'):
+def get_colored(val, color='white'):
+    c = ""
     if color is 'green':
         c = Fore.GREEN
     elif color is 'cyan':
         c = Fore.CYAN
     elif color is 'red':
         c = Fore.RED
+    elif color is 'magenta':
+        c = Fore.MAGENTA
+    elif color is 'blue':
+        c = Fore.BLUE
+    return c+val+Style.RESET_ALL
+
+def print_c(val, color='green', end='\n'):
+    c = ""
+    if color is 'green':
+        c = Fore.GREEN
+    elif color is 'cyan':
+        c = Fore.CYAN
+    elif color is 'red':
+        c = Fore.RED
+    elif color is 'magenta':
+        c = Fore.MAGENTA
+    elif color is 'blue':
+        c = Fore.BLUE
     print(c+val+Style.RESET_ALL, end=end)
 
 def print_color(key, attr, color='cyan'):
+    c = Fore.CYAN
     attr = str(attr)
-    if color is 'cyan':
-        c = Fore.CYAN
-    print("\t|"+c+'{:15s} {:5s}'.format(key, ":")+Style.RESET_ALL+'{:10s}'.format(attr));
-
-def print_head(key, color='cyan'):
     if color is 'cyan':
         c = Fore.CYAN
     elif color is 'red':
         c = Fore.RED
-    print(Fore.RED+"\t|"+key+"\n"+Style.RESET_ALL);
+    elif color is 'blue':
+        c = Fore.BLUE
+    elif color is 'magenta':
+        c = Fore.MAGENTA
+    print("\t|"+c+'{:15s} {:5s}'.format(key, ":")+Style.RESET_ALL+'{:10s}'.format(attr));
+
+def print_head(key, color='cyan'):
+    c = Fore.CYAN
+    if color is 'cyan':
+        c = Fore.CYAN
+    elif color is 'red':
+        c = Fore.RED
+    elif color is 'blue':
+        c = Fore.BLUE
+    elif color is 'magenta':
+        c = Fore.MAGENTA
+    print(c+"\t|"+key+"\n"+Style.RESET_ALL);
 
 
 def plotterm(x,y):

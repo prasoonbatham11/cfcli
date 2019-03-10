@@ -5,6 +5,7 @@ from commands.contest_list import *
 from commands.problems import *
 from commands.blog import *
 from commands.ratingchange import *
+from commands.bloguser import *
 import requests
 import json
 
@@ -24,6 +25,7 @@ def get_parser():
     parser.add_argument('-b','--blog',help="View the blog entry specified by id")
     parser.add_argument('-rc', '--ratingchange', help="Get Rating change of contest id")
     parser.add_argument('--handle', help="Specify handle for rating change")
+    parser.add_argument('-bu','--bloguser',help="Get blog entries of user")
     
     # return parser
     return parser
@@ -43,6 +45,7 @@ def main():
     blogid = args.blog
     cid = args.ratingchange
     handle = args.handle
+    bloguser_ = args.bloguser
     
     if user:
         res = get_req("http://codeforces.com/api/user.info?handles={0}".format(user))
@@ -72,5 +75,8 @@ def main():
             rath(json.loads(res.text), handle)
         else:
             ratc(json.loads(res.text))
+    elif bloguser_:
+        res = get_req("https://codeforces.com/api/user.blogEntries?handle={}".format(bloguser_))
+        bloguser(json.loads(res.text))
 
 main()

@@ -2,7 +2,6 @@ from .util import *
 from .classes import *
 import pydoc
 import time
-from anytree import Node, RenderTree, render
 import textwrap
 
 def blog(res, comm):
@@ -36,14 +35,14 @@ def blog(res, comm):
 
     tree = []
     indx = []
-    tree.append(Node(c[0]))
+    tree.append(root)
     indx.append(0)
     
     for i in range(1,len(c)):
         for j in range(len(tree)):
-            if c[i].parentCommentId == tree[j].name.id:
+            if c[i].parentCommentId == tree[j].id:
                 break
-        tree.append(Node(c[i],parent=tree[j]))
+        tree.append(c[i])
         indx.append(indx[j]+1)
 
     comm_ = get_commthread(c, indx)

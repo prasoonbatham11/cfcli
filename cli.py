@@ -6,6 +6,7 @@ from commands.problems import *
 from commands.blog import *
 from commands.ratingchange import *
 from commands.bloguser import *
+from commands.userstatus import *
 import requests
 import json
 
@@ -26,6 +27,9 @@ def get_parser():
     parser.add_argument('-rc', '--ratingchange', help="Get Rating change of contest id")
     parser.add_argument('--handle', help="Specify handle for rating change")
     parser.add_argument('-bu','--bloguser',help="Get blog entries of user")
+    parser.add_argument('-us','--userstatus', help="Get submissions of specified user")
+    parser.add_argument('--fr', help="1-based index of the first submission to return")
+    parser.add_argument('--count', help="Number of returned submissions")
     
     # return parser
     return parser
@@ -46,6 +50,9 @@ def main():
     cid = args.ratingchange
     handle = args.handle
     bloguser_ = args.bloguser
+    user_status = args.userstatus
+    from_ = args.fr
+    count = args.count
     
     if user:
         res = get_req("http://codeforces.com/api/user.info?handles={0}".format(user))
@@ -78,5 +85,15 @@ def main():
     elif bloguser_:
         res = get_req("https://codeforces.com/api/user.blogEntries?handle={}".format(bloguser_))
         bloguser(json.loads(res.text))
+    elif user_status:
+        if not from_ and not count:
+            res = get_req("https://codeforces.com/api/user.status?handle={}".format(user_status))
+        else:
+            if not from_:
+                from_ = 1
+            if not count:
+                count = 10
+            res = get_req("https://codeforces.com/api/user.status?handle={}&from={}&count={}".format(user_status, from_, count))
+        userstatus(json.loads(res.text))
 
 main()

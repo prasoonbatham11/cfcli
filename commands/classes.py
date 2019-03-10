@@ -92,3 +92,33 @@ class Comment:
         self.rating = c.get("rating")
         if not self.parentCommentId:
             self.parentCommentId = 0
+
+class Member:
+    def __init__(self, m):
+        self.handle = m.get("handle")
+
+class Party:
+    def __init__(self, p):
+        self.contestId = p.get("contestId")
+        self.members = [Member(i) for i in p.get("members")]
+        self.participantType = p.get("participantType")
+        self.teamId = p.get("teamId")
+        self.teamName = p.get("teamName")
+        self.ghost = p.get("ghost")
+        self.room = p.get("room")
+        self.startTimeSeconds = p.get("startTimeSeconds")
+
+class Submission:
+    def __init__(self, p):
+        self.id = p.get("id")
+        self.contestId = p.get("contestId")
+        self.creationTimeSeconds = p.get("creationTimeSeconds")
+        self.relativeTimeSeconds = p.get("relativeTimeSeconds")
+        self.programmingLanguage = p.get("programmingLanguage")
+        self.verdict = p.get("verdict")
+        self.testset = p.get("testset")
+        self.passedTestCount = p.get("passedTestCount")
+        self.timeConsumedMillis = p.get("timeConsumedMillis")
+        self.memoryConsumedBytes = p.get("memoryConsumedBytes")
+        self.problem = Problem(p.get("problem"))
+        self.author = Party(p.get("author"))

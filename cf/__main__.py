@@ -1,17 +1,17 @@
+import sys
 import argparse
-from commands.user_info import *
-from commands.user_rating import *
-from commands.contest_list import *
-from commands.problems import *
-from commands.blog import *
-from commands.ratingchange import *
-from commands.bloguser import *
-from commands.userstatus import *
-from commands.conteststatus import *
-from commands.compare import *
+from user_info import *
+from user_rating import *
+from contest_list import *
+from problems import *
+from blog import *
+from ratingchange import *
+from bloguser import *
+from userstatus import *
+from conteststatus import *
+from compare import *
 import requests
 import json
-import sys
 
 def get_req(url):
     return requests.get(url)
@@ -125,4 +125,4 @@ def main(argv=None):
         compare(json.loads(res.text))
 
 if __name__=='__main__':
-    main(sys.argv)
+    sys.exit(main(sys.argv))

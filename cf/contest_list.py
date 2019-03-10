@@ -1,5 +1,5 @@
-from .classes import *
-from .util import *
+from classes import *
+from util import *
 
 def contest_list(contests, num):
     contests = contests['result']

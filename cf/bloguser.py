@@ -1,10 +1,10 @@
-from .util import *
-from .classes import *
+from util import *
+from classes import *
 import pydoc
 from cmd import Cmd
 import requests
 import json
-from .blog import *
+from blog import *
 
 bu = []
 

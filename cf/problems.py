@@ -1,5 +1,5 @@
-from .util import *
-from .classes import *
+from util import *
+from classes import *
 from cmd import Cmd
 import urllib
 from bs4 import BeautifulSoup

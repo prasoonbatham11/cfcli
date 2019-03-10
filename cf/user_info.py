@@ -1,5 +1,5 @@
-from .classes import *
-from .util import *
+from classes import *
+from util import *
 
 def user_info(user):
     u1 = User(user['result'][0])

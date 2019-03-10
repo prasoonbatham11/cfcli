@@ -122,3 +122,22 @@ class Submission:
         self.memoryConsumedBytes = p.get("memoryConsumedBytes")
         self.problem = Problem(p.get("problem"))
         self.author = Party(p.get("author"))
+
+class ProblemResult:
+    def __init__(self, p):
+        self.points = p.get("points")
+        self.penalty = p.get("penalty")
+        self.rejectedAttemptCount = p.get("rejectedAttemptCount")
+        self.type = p.get("type")
+        self.bestSubmissionTimeSeconds = p.get("bestSubmissionTimeSeconds")
+
+class RanklistRow:
+    def __init__(self, r):
+        self.party = Party(r.get("party"))
+        self.rank = r.get("rank")
+        self.points = r.get("points")
+        self.penalty = r.get("penalty")
+        self.successfulHackCount = r.get("successfulHackCount")
+        self.unsuccessfulHackCount = r.get("unsuccessfulHackCount")
+        self.lastSubmissionTimeSeconds = r.get("lastSubmissionTimeSeconds")
+        self.problemResults = [ProblemResult(i) for i in p.get("problemResults")]

@@ -8,6 +8,7 @@ from commands.ratingchange import *
 from commands.bloguser import *
 from commands.userstatus import *
 from commands.conteststatus import *
+from commands.compare import *
 import requests
 import json
 
@@ -32,7 +33,7 @@ def get_parser():
     parser.add_argument('--fr', help="1-based index of the first submission to return")
     parser.add_argument('--count', help="Number of returned submissions")
     parser.add_argument('-cs','--cstatus',help="Get contest submissions")
-    
+    parser.add_argument('--compare', nargs=2, help="Compare two users. Write handles separated by ;")
     # return parser
     return parser
 
@@ -56,6 +57,7 @@ def main():
     from_ = args.fr
     count = args.count
     cstatus = args.cstatus
+    comp = args.compare
     
     if user:
         res = get_req("http://codeforces.com/api/user.info?handles={0}".format(user))
@@ -114,5 +116,8 @@ def main():
             else:
                 res = get_req("https://codeforces.com/api/contest.status?contestId={}&from={}&count={}".format(cstatus,from_, count))
         conteststatus(json.loads(res.text))
+    elif comp:
+        res = get_req("http://codeforces.com/api/user.info?handles={};{}".format(comp[0],comp[1]))
+        compare(json.loads(res.text))
 
 main()

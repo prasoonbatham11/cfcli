@@ -17,7 +17,7 @@ def user_info(user):
     print_color("City", u1.city, 'cyan')
     print_color("Country", u1.country, 'cyan')
     print_color("Organization", u1.organization, 'cyan')
-    
+    print()
     print_head("Rating Statistics", 'red')
     print_color("Contribution", u1.contribution, 'cyan')
     print_color("Rank", u1.rank, 'cyan')

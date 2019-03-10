@@ -32,7 +32,11 @@ def ratc(res):
     pydoc.pager(ratingchange(res))
 
 def rath(res, han):
+    found = False
     for r in res['result']:
         if r['handle']==han:
             print(get_rc(RatingChange(r)))
+            found=True
             break
+    if not found:
+        print(get_colored('\nUser did not participate in contest', 'red'))

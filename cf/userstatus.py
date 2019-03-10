@@ -1,5 +1,5 @@
-from util import *
-from classes import *
+from .util import *
+from .classes import *
 from prettytable import PrettyTable as PT
 import pydoc
 

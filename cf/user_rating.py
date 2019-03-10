@@ -1,6 +1,6 @@
-from .classes import *
+from cf.classes import *
 from colorama import Fore, Back, Style
-from .util import *
+from cf.util import *
 from datetime import datetime
 
 

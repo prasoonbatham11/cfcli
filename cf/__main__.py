@@ -2,19 +2,23 @@ import sys
 import argparse
 import requests
 import json
-from .user_info import *
-from .user_rating import *
-from .contest_list import *
-from .problems import *
-from .blog import *
-from .ratingchange import *
-from .bloguser import *
-from .userstatus import *
-from .conteststatus import *
-from .compare import *
+from cf.user_info import *
+from cf.user_rating import *
+from cf.contest_list import *
+from cf.problems import *
+from cf.blog import *
+from cf.ratingchange import *
+from cf.bloguser import *
+from cf.userstatus import *
+from cf.conteststatus import *
+from cf.compare import *
+from yaspin import yaspin
+from yaspin.spinners import Spinners
 
 def get_req(url):
-    return requests.get(url)
+    with yaspin(Spinners.arc, text="Loading", color="magenta", side="right", reversal=True) as sp:
+        res = requests.get(url)
+    return res
 
 def get_parser():
     parser = argparse.ArgumentParser(description="Codeforces CLI")

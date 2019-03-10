@@ -1,10 +1,10 @@
-from .util import *
-from .classes import *
+from cf.util import *
+from cf.classes import *
 import pydoc
 from cmd import Cmd
 import requests
 import json
-from .blog import *
+from cf.blog import *
 
 bu = []
 

@@ -74,6 +74,7 @@ def plotterm(x,y):
         gnuplot.stdin.write(bytes("%s %f\n" % (i,j), "utf-8"))
     gnuplot.stdin.write(bytes("exit\n", "utf-8"))
     gnuplot.stdin.flush()
+    gnuplot.stdin.close()
 
 def seconds_to_hrs(time):
     if time>0:

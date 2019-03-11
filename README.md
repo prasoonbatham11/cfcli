@@ -18,7 +18,7 @@
       <li><a href="#get-blog-entries-of-a-user">Get Blog Entries Of A User</a></li>
       <li><a href="#get-submissions-for-a-specified-user">Get Submissions For A Specified User</a></li>
       <li><a href="#view-contest-submissions">View Contest Submissions</a></li>
-      <li><a href="#compare-2-users">Compare 2 Users</a></li>
+      <li><a href="#compare-two-users">Compare Two Users</a></li>
     </ul>
   </li>
 </ul>
@@ -210,7 +210,7 @@ cf -cs 1137 --fr 50 --count 100
 cf -cs 556 --fr 3 --count 10 --handle Petr
 ```
 
-### Compare 2 Users
+### Compare Two Users
 
  ```bash
 cf --compare prasoonbatham Petr

@@ -1,4 +1,4 @@
-<p align="center"><img width=20% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/logo.png"></p>
+<p align="center"><img width=20% alt="Cool cfcli Logo" src="https://github.com/prasoonbatham11/cfcli/blob/master/images/logo.png"></p>
 <h4 align="center">Codeforces cli for lazy nerds who don't want to leave their cozy terminals.</h4>
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)

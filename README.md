@@ -50,6 +50,8 @@ cf -h
 cf -u prasoonbatham
 ```
 
+<p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/show_user.png"></p>
+
 ### View Rating Graph of User
 
 ```bash
@@ -58,6 +60,8 @@ cf -g prasoonbatham
 ```
 
 <p>Rating Graph of user is displayed as a gnuplot.</p>
+
+<p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/user_graph.png"></p>
 
 ### View Contest Details
 
@@ -70,6 +74,8 @@ cf -g 1137
 # To view Contests from gym
 cf -g 1133 --gym
 ```
+
+<p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/contest.png"></p>
 
 ### Interact With Problemset Subcommand Interface
 
@@ -288,6 +294,8 @@ cf -us prasoonbatham --fr 5
 cf -us prasoonbatham --count 20
 ```
 
+<p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/submissions_user.png"></p>
+
 ### View Contest Submissions
 
  ```bash
@@ -309,10 +317,14 @@ cf -cs 1137 --fr 50 --count 100
 cf -cs 556 --fr 3 --count 10 --handle Petr
 ```
 
+<p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/submissions_contest.png"></p>
+
 ### Compare Two Users
 
  ```bash
 cf --compare prasoonbatham Petr
 ```
 
+<p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/compare.png"></p>
 
+<p>Seriously who am I comparing myself to!</p>

@@ -28,7 +28,7 @@
 ## Installation
 
 ```bash
-pip install cfcli
+pip install cfs
 ```
 <p>OR</p>
 

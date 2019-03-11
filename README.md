@@ -73,12 +73,111 @@ cf -g 1133 --gym
 
 ### Interact With Problemset Subcommand Interface
 
+<p>These commands retrieve the specified problemset (by tag or whole) and open a python cmd sub-terminal where various other actions can be performed.</p>
+
 ```bash
 # Loads all the problems
 cf -p
 
 # Specify a problemset tag
 cf -p --tag dp
+```
+
+<p>The sub-interface has the following commands:</p>
+<ul>
+  <li>View available commands: <strong>?</strong></li>
+  <li>List n Problems (max 15): <strong>list n</strong></li>
+  <li>Reset the pointer to list problems: <strong>reset</strong></li>
+  <li>List problems of contest id 'cid': <strong>listc cid</strong></li>
+  <li>List 10 problems specified by index: <strong> listi index</strong></li>
+  <li>View problem details specified by name: <strong> listn name</strong></li>
+  <li>View problem details specified by index: <strong> prob index</strong></li>
+  <li>View problem statement specified by contestid+index: <strong>stat 1133A</strong></li>
+</ul>
+
+<p>Say the following is the output for 8 problems</p>
+
+```bash
+cf> list 8
+0: Circus
+1: Sushi for Two
+2: Matches Are Not a Child's Play 
+3: Train Car Selection
+4: Cooperative Game
+5: Museums Tour
+6: Camp Schedule
+7: Skyscrapers
+cf> list 8
+8: Spanning Tree with One Fixed Degree
+9: Spanning Tree with Maximum Degree
+10: K Balanced Teams
+11: Zero Quantity Maximization
+12: Balanced Team
+13: Preparation for International Women's Day
+14: Middle of the Contest
+15: Greedy Subsequences
+cf> 
+```
+
+<p>To reset the pointer back to 0 we use <strong>reset</strong> command.</p>
+
+<p>Similar to <strong>list</strong>, <strong>listc</strong> is used to list problems of a particular contest.</p>
+
+
+```bash
+cf> listc 1133
+8: Spanning Tree with One Fixed Degree
+9: Spanning Tree with Maximum Degree
+10: K Balanced Teams
+11: Zero Quantity Maximization
+12: Balanced Team
+13: Preparation for International Women's Day
+14: Middle of the Contest
+```
+
+<p>In codeforces every problem has an index ('A', 'B', etc.). To view the problems by index use <strong>listi</strong>. To reset the pointer, again use <strong>reset</strong> command.</p>
+
+```bash
+cf> listi B
+0: Circus
+6: Camp Schedule
+13: Preparation for International Women's Day
+20: Discounts
+27: Draw!
+30: Two Cakes
+35: Wrong Answer
+39: Mike and Children
+45: Once in a casino
+53: Tanya and Candies
+```
+
+<p><strong>listn</strong> and <strong>prob</strong> are used to view problem details by name and serial number respectively</p>
+
+```bash
+cf> listn Sushi for Two
+        |Problem Details
+
+        |Name            :    Sushi for Two
+        |Contest ID      :    1138      
+        |Index           :    A         
+        |Points          :    500.0     
+        |Rating          :    900       
+        |Solved By       :    3940      
+cf> prob 0
+        |Problem Details
+
+        |Name            :    Circus    
+        |Contest ID      :    1138      
+        |Index           :    B         
+        |Points          :    1000.0    
+        |Rating          :    1700      
+        |Solved By       :    1147 
+```
+
+<p>To view any problem statement use <strong>stat</strong> command. This opens a paged output where you can see problem statement.</p>
+
+```bash
+cf> stat 1133A
 ```
 
 ### View A Blog Entry Specified By Blog ID

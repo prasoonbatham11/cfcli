@@ -28,21 +28,21 @@ def get_parser():
     parser = argparse.ArgumentParser(description="Codeforces CLI")
 
     # Add parameters
-    parser.add_argument('-u','--user', help="Handle of user")
-    parser.add_argument('-g','--graph', help="Provides rating chart of user");
-    parser.add_argument('-c','--contest',type=int,help="id of contest to display");
-    parser.add_argument('--gym', action='store_true', help="Optional argument to list gym contests");
-    parser.add_argument('-p','--problem', action='store_true', help="Retrieve all problems");
-    parser.add_argument('--tag', help="Tag of problems to retrieve");
-    parser.add_argument('-b','--blog',help="View the blog entry specified by id")
-    parser.add_argument('-rc', '--ratingchange', help="Get Rating change of contest id")
-    parser.add_argument('--handle', help="Specify handle for rating change")
-    parser.add_argument('-bu','--bloguser',help="Get blog entries of user")
-    parser.add_argument('-us','--userstatus', help="Get submissions of specified user")
-    parser.add_argument('--fr', help="1-based index of the first submission to return")
-    parser.add_argument('--count', help="Number of returned submissions")
-    parser.add_argument('-cs','--cstatus',help="Get contest submissions")
-    parser.add_argument('--compare', nargs=2, help="Compare two users. Write handles separated by ;")
+    parser.add_argument('-u','--user', metavar='<HANDLE>', help="Display user details.")
+    parser.add_argument('-g','--graph', metavar='<HANDLE>', help="Display rating chart of user.");
+    parser.add_argument('-c','--contest', metavar='<CONTEST ID>',type=int,help="Details of contest.");
+    parser.add_argument('--gym', action='store_true', help="Optional argument to list gym contests. Use with -c.");
+    parser.add_argument('-p','--problem', action='store_true', help="Retrieve all problems.");
+    parser.add_argument('--tag', metavar='<TAG>', help="Tag of problems to retrieve.");
+    parser.add_argument('-b','--blog',metavar='<BLOG ID>', help="View the blog entry specified by id.")
+    parser.add_argument('-rc', '--ratingchange', metavar='<CONTEST ID>', help="Get Rating change of contest id.")
+    parser.add_argument('--handle', metavar='<HANDLE>', help="Specify handle.")
+    parser.add_argument('-bu','--bloguser',metavar='<HANDLE>', help="Get blog entries of user.")
+    parser.add_argument('-us','--userstatus', metavar='<HANDLE>', help="Get submissions of specified user.")
+    parser.add_argument('--fr', metavar='<FROM>', help="1-based index of the first submission to return.")
+    parser.add_argument('--count', metavar='<COUNT>', help="Number of returned submissions.")
+    parser.add_argument('-cs','--cstatus',metavar='<CONTEST ID>', help="Get contest submissions.")
+    parser.add_argument('--compare', nargs=2, metavar='<USER1 USER2>', help="Compare two users.")
     # return parser
     return parser
 

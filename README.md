@@ -58,7 +58,7 @@ cfs -u prasoonbatham
 
 ```bash
 # Shows Rating change graph of user
-cf -g prasoonbatham
+cfs -g prasoonbatham
 ```
 
 <p>Rating Graph of user is displayed as a gnuplot.</p>

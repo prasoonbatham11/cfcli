@@ -21,6 +21,8 @@
       <li><a href="#compare-two-users">Compare Two Users</a></li>
     </ul>
   </li>
+  <li><a href="#todo">TODO</a></li>
+  <li><a href="#contribute">Contribute</a></li>
 </ul>
 
 ## Installation
@@ -332,3 +334,17 @@ cf --compare prasoonbatham Petr
 <p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/compare.png"></p>
 
 <p>Seriously who am I comparing myself to!</p>
+
+## TODO
+
+<ul>
+  <li>Add Command for submitting a solution.</li>
+  <li>Improve rendering of problem statement.</li>
+</ul>
+
+## Contribute
+
+<ul>
+  <li><a href="https://github.com/prasoonbatham11/cfcli/issues">Have an issue?</a></li>
+  <li>Feel free to send feedback via <a href="prasoonbatham@gmail.com">mail</a></li>
+</ul>

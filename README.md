@@ -11,6 +11,14 @@
     <ul>
       <li><a href="#view-user-details">View User Details</a></li>
       <li><a href="#view-rating-graph-of-user">View Rating Graph of User</a></li>
+      <li><a href="#view-contest-details">View Contest Details</a></li>
+      <li><a href="#interact-with-problemset-subcommand-interface">Interact With Problemset Subcommand Interface</a></li>
+      <li><a href="#view-a-blog-entry-specified-by-blog-id">View A Blog Entry Specified By Blog ID</a></li>
+      <li><a href="#view-rating-change-for-users-in-a-contest">View Rating Change For Users In A Contest</a></li>
+      <li><a href="#get-blog-entries-of-a-user">Get Blog Entries Of A User</a></li>
+      <li><a href="#get-submissions-for-a-specified-user">Get Submissions For A Specified User</a></li>
+      <li><a href="#view-contest-submissions">View Contest Submissions</a></li>
+      <li><a href="#compare-2-users">Compare 2 Users</a></li>
     </ul>
   </li>
 </ul>

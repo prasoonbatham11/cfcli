@@ -52,7 +52,7 @@ cfs -h
 cfs -u prasoonbatham
 ```
 
-<p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/show_user.png"></p>
+![](https://raw.githubusercontent.com/prasoonbatham11/cfcli/master/images/show_user.png)
 
 ### View Rating Graph of User
 
@@ -63,7 +63,7 @@ cfs -g prasoonbatham
 
 <p>Rating Graph of user is displayed as a gnuplot.</p>
 
-<p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/user_graph.png"></p>
+![](https://raw.githubusercontent.com/prasoonbatham11/cfcli/master/images/user_graph.png)
 
 ### View Contest Details
 
@@ -77,7 +77,7 @@ cfs -c 1137
 cfs -c 102134 --gym
 ```
 
-<p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/contest.png"></p>
+![](https://raw.githubusercontent.com/prasoonbatham11/cfcli/master/images/contest.png)
 
 ### Interact With Problemset Subcommand Interface
 
@@ -199,7 +199,7 @@ cfs -b 14565
 
 <p>The blog is displayed in a paged output with a proper comment thread. The comment thread is hierarchical, i.e., a reply to a comment is separated by one tab space from its parent comment.</p>
 
-<p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/blog.png"></p>
+![](https://raw.githubusercontent.com/prasoonbatham11/cfcli/master/images/blog.png)
 
 ### View Rating Change For Users In A Contest
 
@@ -211,7 +211,7 @@ cfs -rc 1137
 cfs -rc 1137 --handle Petr
 ```
 
-<p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/rating_change.png"></p>
+![](https://raw.githubusercontent.com/prasoonbatham11/cfcli/master/images/rating_change.png)
 
 ### Get Blog Entries Of A User
 
@@ -300,7 +300,7 @@ cfs -us prasoonbatham --fr 5
 cfs -us prasoonbatham --count 20
 ```
 
-<p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/submissions_user.png"></p>
+![](https://raw.githubusercontent.com/prasoonbatham11/cfcli/master/images/submissions_user.png)
 
 ### View Contest Submissions
 
@@ -323,7 +323,7 @@ cfs -cs 1137 --fr 50 --count 100
 cfs -cs 556 --fr 3 --count 10 --handle Petr
 ```
 
-<p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/submissions_contest.png"></p>
+![](https://raw.githubusercontent.com/prasoonbatham11/cfcli/master/images/submissions_contest.png)
 
 ### Compare Two Users
 
@@ -331,7 +331,7 @@ cfs -cs 556 --fr 3 --count 10 --handle Petr
 cfs --compare prasoonbatham Petr
 ```
 
-<p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/compare.png"></p>
+![](https://raw.githubusercontent.com/prasoonbatham11/cfcli/master/images/compare.png)
 
 <p>Seriously who am I comparing myself to!</p>
 

@@ -42,14 +42,14 @@ python3 setup.py install
 <p>Use <strong>-h</strong> or <strong>--help</strong> to see usage.</p>
 
  ```bash
-cf -h
+cfs -h
 ```
 
 ### View User Details
 
 ```bash
 # Shows basic details of the user specified
-cf -u prasoonbatham
+cfs -u prasoonbatham
 ```
 
 <p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/show_user.png"></p>
@@ -71,10 +71,10 @@ cf -g prasoonbatham
 
 ```bash
 # Shows details of contest specified by contest id
-cf -g 1137
+cfs -g 1137
 
 # To view Contests from gym
-cf -g 1133 --gym
+cfs -g 1133 --gym
 ```
 
 <p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/contest.png"></p>
@@ -85,10 +85,10 @@ cf -g 1133 --gym
 
 ```bash
 # Loads all the problems
-cf -p
+cfs -p
 
 # Specify a problemset tag
-cf -p --tag dp
+cfs -p --tag dp
 ```
 
 <p>The sub-interface has the following commands:</p>
@@ -194,7 +194,7 @@ cf> stat 1133A
 
 ```bash
 # View blog specified by blog id
-cf -b 14565
+cfs -b 14565
 ```
 
 <p>The blog is displayed in a paged output with a proper comment thread. The comment thread is hierarchical, i.e., a reply to a comment is separated by one tab space from its parent comment.</p>
@@ -205,10 +205,10 @@ cf -b 14565
 
 ```bash
 # View blog specified by blog id
-cf -rc 1137
+cfs -rc 1137
 
 # Specify a particular handle
-cf -rc 1137 --handle Petr
+cfs -rc 1137 --handle Petr
 ```
 
 <p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/rating_change.png"></p>
@@ -217,7 +217,7 @@ cf -rc 1137 --handle Petr
 
 ```bash
 # Get all blog entries of Petr
-cf -bu Petr
+cfs -bu Petr
 ```
 
 <p>The subcommand interface is implemented using cmd python package and has the following commands.</p>
@@ -274,14 +274,14 @@ cf> vidx 64854
 <p>To display all the submissions of the user use:</p>
 
 ```bash
-cf -us prasoonbatham
+cfs -us prasoonbatham
 ```
 
 <p>You can also specify fr and count arguments to see <strong>count</strong> number of submissions from a particular index <strong>fr</strong>.</p>
  
  ```bash
 # Display 10 submissions from 5th index
-cf -us prasoonbatham --fr 5 --count 10
+cfs -us prasoonbatham --fr 5 --count 10
 ```
  
 <p>The default values for <strong>fr</strong> and <strong>count</strong> are 1 and 10 respectively. If either one of these are specified the other one takes default value.</p>
@@ -290,14 +290,14 @@ cf -us prasoonbatham --fr 5 --count 10
 
  ```bash
 # Here count takes the default value 10
-cf -us prasoonbatham --fr 5
+cfs -us prasoonbatham --fr 5
 ```
 
 <p>Similarly,</p>
 
  ```bash
 # Display 20 submissions from 1st index
-cf -us prasoonbatham --count 20
+cfs -us prasoonbatham --count 20
 ```
 
 <p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/submissions_user.png"></p>
@@ -306,21 +306,21 @@ cf -us prasoonbatham --count 20
 
  ```bash
 # Display contest submissions specified by contest id
-cf -cs 1137
+cfs -cs 1137
 ```
 
 <p>Here too you can specify <strong>fr</strong> and <strong>count</strong> arguments to see submissions. And it works similar to user submissions.</p>
 
  ```bash
 # Display 100 submissions from index 50
-cf -cs 1137 --fr 50 --count 100
+cfs -cs 1137 --fr 50 --count 100
 ```
 
 <p>Another optional parameter to specify here is: <strong>handle</strong> which retrieves submissions only by the user specified.</p>
 
  ```bash
 # Display 10 submissions for user Petr from index 3 in contest 556
-cf -cs 556 --fr 3 --count 10 --handle Petr
+cfs -cs 556 --fr 3 --count 10 --handle Petr
 ```
 
 <p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/submissions_contest.png"></p>
@@ -328,7 +328,7 @@ cf -cs 556 --fr 3 --count 10 --handle Petr
 ### Compare Two Users
 
  ```bash
-cf --compare prasoonbatham Petr
+cfs --compare prasoonbatham Petr
 ```
 
 <p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/compare.png"></p>

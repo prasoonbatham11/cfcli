@@ -4,12 +4,18 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
 
-<p align="center">
-  <a href="#install">Install</a> •
-  <a href="#usage">Usage</a> •
-</p>
+<ul>
+  <li><a href="#installation">Installation</a></li>
+  <li>
+    <a href="#usage">Usage</a>  
+    <ul>
+      <li><a href="#view-user-details">View User Details</a></li>
+      <li><a href="#view-rating-graph-of-user">View Rating Graph of User</a></li>
+    </ul>
+  </li>
+</ul>
 
-## Install
+## Installation
 
 ```bash
 pip install cfcli
@@ -22,6 +28,12 @@ python3 setup.py install
 ```
 
 ## Usage
+
+<p>Use <strong>-h</strong> or <strong>--help</strong> to see usage</p>
+
+ ```bash
+cf -h
+```
 
 ### View User Details
 

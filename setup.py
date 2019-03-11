@@ -9,10 +9,10 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 
 setup(
-    name='cf',
+    name='cfs',
     include_package_data=True,
     packages=find_packages(),
-    entry_points={'console_scripts': ['cf = cf.__main__:main']},
+    entry_points={'console_scripts': ['cfs = cf.__main__:main']},
     install_requires=['requests','prettytable','bs4','colorama','numpy','mdv','html2text','gnuplotlib','termgraph','yaspin'],
     python_requires='>=3.6',
     requires=['requests','prettytable','bs4','colorama','numpy','mdv','html2text','gnuplotlib','termgraph','yaspin'],

@@ -346,5 +346,5 @@ cf --compare prasoonbatham Petr
 
 <ul>
   <li><a href="https://github.com/prasoonbatham11/cfcli/issues">Have an issue?</a></li>
-  <li>Feel free to send feedback via <a href="prasoonbatham@gmail.com">mail</a></li>
+  <li>Feel free to send feedback via <a href="mailto:prasoonbatham@gmail.com">mail</a></li>
 </ul>

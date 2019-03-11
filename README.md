@@ -207,6 +207,8 @@ cf -rc 1137
 cf -rc 1137 --handle Petr
 ```
 
+<p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/rating_change.png"></p>
+
 ### Get Blog Entries Of A User
 
 ```bash

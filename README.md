@@ -71,10 +71,10 @@ cfs -g prasoonbatham
 
 ```bash
 # Shows details of contest specified by contest id
-cfs -g 1137
+cfs -c 1137
 
 # To view Contests from gym
-cfs -g 1133 --gym
+cfs -c 102134 --gym
 ```
 
 <p align="center"><img width=80% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/contest.png"></p>

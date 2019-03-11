@@ -197,6 +197,8 @@ cf -b 14565
 
 <p>The blog is displayed in a paged output with a proper comment thread. The comment thread is hierarchical, i.e., a reply to a comment is separated by one tab space from its parent comment.</p>
 
+<p align="center"><img width=100% src="https://github.com/prasoonbatham11/cfcli/blob/master/images/blog.png"></p>
+
 ### View Rating Change For Users In A Contest
 
 ```bash

@@ -18,6 +18,10 @@ from yaspin.spinners import Spinners
 def get_req(url):
     with yaspin(Spinners.arc, text="Loading", color="magenta", side="right", reversal=True) as sp:
         res = requests.get(url)
+    comm = json.loads(res.text)
+    if comm['status'] != 'OK':
+        print(comm['comment'])
+        sys.exit(1)
     return res
 
 def get_parser():

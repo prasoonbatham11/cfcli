@@ -23,5 +23,6 @@ setup(
     author_email='prasoonbatham@gmail.com',
     description='Codeforces cli for lazy nerds who don\'t want to leave their cozy terminals.',
     long_description=long_description,
-    long_description_content_type='text/markdown'
+    long_description_content_type='text/markdown',
+    keywords=['Codeforces','cli', 'command line', 'terminal'],
 )

@@ -37,7 +37,7 @@ python3 setup.py install
 
 ## Usage
 
-<p>Use <strong>-h</strong> or <strong>--help</strong> to see usage</p>
+<p>Use <strong>-h</strong> or <strong>--help</strong> to see usage.</p>
 
  ```bash
 cf -h
@@ -57,11 +57,11 @@ cf -u prasoonbatham
 cf -g prasoonbatham
 ```
 
-<p>Rating Graph of user is displayed as a gnuplot</p>
+<p>Rating Graph of user is displayed as a gnuplot.</p>
 
 ### View Contest Details
 
-<p>Contest ID can be found in the url of contest such as: <a href="https://codeforces.com/contest/1137">/contest/<strong>1137</strong>/</a></p>
+<p>Contest ID can be found in the url of contest such as: <a href="https://codeforces.com/contest/1137">/contest/<strong>1137</strong>/</a>.</p>
 
 ```bash
 # Shows details of contest specified by contest id
@@ -83,7 +83,7 @@ cf -p --tag dp
 
 ### View A Blog Entry Specified By Blog ID
 
-<p>Blog ID can be found in the url of blog such as: <a href="https://codeforces.com/blog/entry/14565">/blog/entry/<strong>14565</strong>/</a></p>
+<p>Blog ID can be found in the url of blog such as: <a href="https://codeforces.com/blog/entry/14565">/blog/entry/<strong>14565</strong>/</a>.</p>
 
 ```bash
 # View blog specified by blog id
@@ -166,7 +166,7 @@ cf> vidx 64854
 cf -us prasoonbatham
 ```
 
-<p>You can also specify fr and count arguments to see <strong>count</strong> number of submissions from a particular index <strong>fr</strong></p>
+<p>You can also specify fr and count arguments to see <strong>count</strong> number of submissions from a particular index <strong>fr</strong>.</p>
  
  ```bash
 # Display 10 submissions from 5th index
@@ -182,7 +182,7 @@ cf -us prasoonbatham --fr 5 --count 10
 cf -us prasoonbatham --fr 5
 ```
 
-<p>Similarly.</p>
+<p>Similarly,</p>
 
  ```bash
 # Display 20 submissions from 1st index
@@ -196,14 +196,14 @@ cf -us prasoonbatham --count 20
 cf -cs 1137
 ```
 
-<p>Here too you can specify <strong>fr</strong> and <strong>count</strong> arguments to see submissions. And it works similar to user submissions</p>
+<p>Here too you can specify <strong>fr</strong> and <strong>count</strong> arguments to see submissions. And it works similar to user submissions.</p>
 
  ```bash
 # Display 100 submissions from index 50
 cf -cs 1137 --fr 50 --count 100
 ```
 
-<p>Another optional parameter to specify here is: <strong>handle</strong> which retrieves submissions only by the user specified</p>
+<p>Another optional parameter to specify here is: <strong>handle</strong> which retrieves submissions only by the user specified.</p>
 
  ```bash
 # Display 10 submissions for user Petr from index 3 in contest 556

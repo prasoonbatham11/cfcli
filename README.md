@@ -337,10 +337,8 @@ cfs --compare prasoonbatham Petr
 
 ## TODO
 
-<ul>
-  <li>Add Command for submitting a solution.</li>
-  <li>Improve rendering of problem statement.</li>
-</ul>
+- [ ] Add Command for submitting a solution.
+- [ ] Improve rendering of problem statement.
 
 ## Contribute
 

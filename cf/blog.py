@@ -44,20 +44,33 @@ def blog(res, comm):
                 break
         tree.append(c[i])
         indx.append(indx[j]+1)
-
+    
     comm_ = get_commthread(c, indx)
     
     final_blog = blog_+"\n\n\n"+comm_
     pydoc.pager(final_blog)
 
 def get_commthread(c,indx):
+
+    # Create comment thread
+    th = [0]
+    j = 0
+    while j<len(th):
+        k = th[j]
+        y = j+1
+        for l in range(len(c)):
+            if c[k].id == c[l].parentCommentId:
+                th.insert(y, l)
+                y+=1
+        j+=1
+    
     comm_ = get_colored('COMMENTS:\n\n', 'magenta')
     tab_ = "\t"
-    for i in range(1,len(c)):
-        comm_ += tab_*indx[i]
-        comm_ += get_colored(c[i].commentatorHandle, 'blue')+"\n"
-        comm_ += tab_*indx[i]
-        comm_ += get_colored(c[i].creationTimeSeconds+" ago", 'green')+"\n"
-        comm_ += tab_*indx[i]
-        comm_ += ("\n"+tab_*indx[i]).join(textwrap.wrap(c[i].text, 150))+"\n\n"
+    for i in range(1,len(th)):
+        comm_ += tab_*indx[th[i]]
+        comm_ += get_colored(c[th[i]].commentatorHandle, 'blue')+"\n"
+        comm_ += tab_*indx[th[i]]
+        comm_ += get_colored(c[th[i]].creationTimeSeconds+" ago", 'green')+"\n"
+        comm_ += tab_*indx[th[i]]
+        comm_ += ("\n"+tab_*indx[th[i]]).join(textwrap.wrap(c[th[i]].text, 150))+"\n\n"
     return comm_

@@ -339,6 +339,7 @@ cfs --compare prasoonbatham Petr
 
 - [ ] Add Command for submitting a solution.
 - [ ] Improve rendering of problem statement.
+- [ ] Add proxy support.
 
 ## Contribute
 

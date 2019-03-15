@@ -15,11 +15,11 @@ def userstatus(res):
     pt.field_names = fn
     for i in s:
         pid = str(i.problem.contestId)+str(i.problem.index)
-        pname = i.problem.name
+        pname = str(i.problem.name)
         points = str(i.problem.points)
-        lang = i.programmingLanguage
-        verd = i.verdict
-        ts = i.testset
+        lang = str(i.programmingLanguage)
+        verd = str(i.verdict)
+        ts = str(i.testset)
         ptest = str(i.passedTestCount)
         time = str(i.timeConsumedMillis)
         mem = str(i.memoryConsumedBytes)

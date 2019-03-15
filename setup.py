@@ -16,7 +16,7 @@ setup(
     install_requires=['requests','prettytable','bs4','colorama','numpy','mdv','html2text','gnuplotlib','termgraph','yaspin'],
     python_requires='>=3.6',
     requires=['requests','prettytable','bs4','colorama','numpy','mdv','html2text','gnuplotlib','termgraph','yaspin'],
-    version='1.0.3',
+    version='1.0.4',
     url='https://github.com/prasoonbatham11/cfcli',
     license='MIT',
     author='Prasoon Batham',

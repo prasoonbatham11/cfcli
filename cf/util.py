@@ -65,7 +65,9 @@ def print_head(key, color='cyan'):
 def plotterm(x,y):
     x=np.array(x)
     y=np.array(y)
-    gnuplot = subprocess.Popen(["/usr/bin/gnuplot"], stdin=subprocess.PIPE)
+    path_gnuplot = subprocess.run(['which', 'gnuplot'], stdout=subprocess.PIPE).stdout.decode('utf-8').strip()
+    print(path_gnuplot)
+    gnuplot = subprocess.Popen([path_gnuplot], stdin=subprocess.PIPE)
     gnuplot.stdin.write(bytes("set term dumb 100 30\n", "utf-8"))
     gnuplot.stdin.write(bytes("set xdata time;\n", "utf-8"))
     gnuplot.stdin.write(bytes("set timefmt \"%d%m%Y\"\n", "utf-8"))
